@@ -30,6 +30,98 @@ int GetKey1(){
 	return -getch();
 	else return key;
 }
+
+ 
+            
+// long
+void ThongTinChung(){
+	TextColor(172);gotoXY(35,1);printf("                                                  ");	
+	gotoXY(35,2); printf("          CHUONG TRINH QUAN LY SINH VIEN          ");	
+	gotoXY(35,3); printf("                                                  ");	
+	TextColor(299);	gotoXY(35,0); printf("  Nhom 8: Truong Viet Long- Ma SV: N15DCCN116  ");	
+	gotoXY(35,4); printf("                                                  ");	
+	gotoXY(35,1);printf("  ");gotoXY(83,1);printf("  ");	
+	gotoXY(35,2);printf("  ");gotoXY(83,2);printf("  ");
+	gotoXY(35,3);printf("  ");gotoXY(83,3);printf("  ");
+	
+	// dino
+	string dino[11] =
+            {
+                    "                                                       ",
+                    "           e-e                     (\____/)            ",
+                    "         /(\\_/)                   / @__@ \\    ABS      ",
+                    ".___.---' /`-'                    (   (oo) ) //        ",
+                    " `-._.  )/,,  /OOP C++/          / `~~~~~~~'//         ",
+                    "     //                         //| ___.--|'/          ",
+                    "    ^^                         // | Nong  |            ",
+                    "==================             m  |uuuuuuu|            ",
+                    "                                  //     \\            ",
+                    "                                 //       \\           ",     
+                    "                                ===        ===         ",       
+            };
+  
+	
+
+for (int i = 0; i < 11; i++) {
+    gotoXY(65, 5 + i); 
+    TextColor(92);
+    cout << dino[i] << endl;
+}
+    
+    
+     
+   	
+//	TextColor(92);	
+//	gotoXY(65,5);printf("                        ¶¶              \n");	TextColor(90);	
+//	gotoXY(65,6);printf("           ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶              \n");	
+//	gotoXY(65,7);printf("        ¶¶¶¶      ¶¶¶¶¶¶¶¶              \n");	
+//	gotoXY(65,8);printf("      ¶¶¶     ¶¶¶¶¶¶ ¶ ¶¶               \n");	
+//	gotoXY(65,9);printf("     ¶    ¶¶¶¶¶¶¶¶¶  ¶  ¶¶              \n");	
+//	gotoXY(65,10);printf("   ¶¶   ¶¶¶¶¶¶¶¶¶   ¶   ¶¶              \n");	
+//	gotoXY(65,11);printf("  ¶¶  ¶¶¶¶¶¶¶¶¶¶   ¶    ¶¶              \n");	
+//	gotoXY(65,12);printf("  ¶¶¶¶¶¶¶¶¶¶¶     ¶¶     ¶¶    ¶¶¶¶¶¶   \n");	
+//	gotoXY(65,13);printf("¶¶¶¶¶¶¶          ¶¶       ¶¶ ¶¶¶¶¶¶¶¶¶¶ \n");TextColor(92);	
+//	gotoXY(65,14);printf("         ¶¶¶¶¶  ¶¶¶        ¶  ¶¶¶¶¶¶¶¶¶ \n");	
+//	gotoXY(65,15);printf("      ¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n");	
+//	gotoXY(65,16);printf("     ¶¶¶¶¶¶¶¶¶¶¶¶  ¶¶¶¶¶  ¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n");	
+//	gotoXY(65,17);printf("    ¶¶¶  ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶  ¶¶¶¶¶¶¶¶¶  ¶¶\n");	   
+//	gotoXY(65,18);printf("    ¶¶   ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶¶  ¶¶\n");	
+//	gotoXY(65,19);printf("    ¶¶  ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶¶ ¶¶ \n");	
+//	gotoXY(65,20);printf("    ¶¶¶ ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶¶¶¶  \n");	
+//	gotoXY(65,21);printf("    ¶¶¶  ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶¶¶¶   \n");	
+//	gotoXY(65,22);printf("     ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶  ¶¶¶¶¶¶¶¶¶     \n");	
+//	gotoXY(65,23);printf("     ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶                \n");	
+//	gotoXY(65,24);printf("       ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶         ABS      \n");	
+//	gotoXY(65,25);printf("          ¶¶¶¶¶¶¶¶¶¶                    \n");	
+//	gotoXY(96,12);printf("¶¶¶¶¶¶ 1"); // setup mau cho ben phai qua cherry
+//	gotoXY(94,13);printf("¶¶¶¶¶¶¶¶¶¶ 2");	TextColor(82);	
+//	gotoXY(89,5);printf("¶¶ 3"); // setup cuong cho cherry
+//	gotoXY(88,6);printf("¶¶¶");
+//	gotoXY(87,7);printf("¶¶¶¶");
+//	gotoXY(86,8);printf("¶¶ ¶¶");	
+//	gotoXY(86,9);printf("¶  ¶¶");
+//	gotoXY(85,10);printf("¶   ¶¶");
+//	gotoXY(84,11);printf("¶    ¶¶");	
+//	gotoXY(83,12);printf("¶¶     ¶¶");
+//	gotoXY(83,12);printf("¶¶     ¶¶");
+//	gotoXY(82,13);printf("¶¶¶        ¶4");	
+//	gotoXY(89,4);printf("¶¶");
+//	gotoXY(89,3);printf("¶¶");
+//	gotoXY(88,2);printf("¶¶");
+//	gotoXY(87,1);printf("¶¶");
+//	gotoXY(87,0);printf("¶5");		
+	char s[] = {"        CHUONG TRINH QUAN LY SINH VIEN     "};	
+	int m = strlen(s) - 1;	TextColor(172);	
+	while( !kbhit() ){      
+		for(int i = m; i > 0 ; i-- ){         
+			s[i] = s[i-1] ;      	 
+			s[0] = s[m-1];	  
+		}	   	   
+		gotoXY(38,2);       printf("%s",s);       
+		gotoXY(38,2);printf(" ");	   Sleep(100); 	 
+	} 	 
+	TextColor(91);
+}
 void Khung_Nhap_Lop(){
 	gotoXY(0,0);
 	TextColor(90);
@@ -778,66 +870,7 @@ void Khung_Nhap_MaLop(){
 	gotoXY(42,4);printf("XEM DANH SACH LOP");	
 	TextColor(12);	gotoXY(40,2);printf("               ");
 	}
-void ThongTinChung(){
-	TextColor(172);gotoXY(35,1);printf("                                                  ");	
-	gotoXY(35,2); printf("          CHUONG TRINH QUAN LY SINH VIEN          ");	
-	gotoXY(35,3); printf("                                                  ");	
-	TextColor(299);	gotoXY(35,0); printf("  Nhom 8: Truong Viet Long- Ma SV: N15DCCN116  ");	
-	gotoXY(35,4); printf("                                                  ");	
-	gotoXY(35,1);printf("  ");gotoXY(83,1);printf("  ");	
-	gotoXY(35,2);printf("  ");gotoXY(83,2);printf("  ");
-	gotoXY(35,3);printf("  ");gotoXY(83,3);printf("  ");	
-	TextColor(92);	
-	gotoXY(65,5);printf("                        ¶¶              \n");	TextColor(90);	
-	gotoXY(65,6);printf("           ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶              \n");	
-	gotoXY(65,7);printf("        ¶¶¶¶      ¶¶¶¶¶¶¶¶              \n");	
-	gotoXY(65,8);printf("      ¶¶¶     ¶¶¶¶¶¶ ¶ ¶¶              \n");	
-	gotoXY(65,9);printf("     ¶    ¶¶¶¶¶¶¶¶¶  ¶  ¶¶              \n");	
-	gotoXY(65,10);printf("   ¶¶   ¶¶¶¶¶¶¶¶¶   ¶   ¶¶              \n");	
-	gotoXY(65,11);printf("  ¶¶  ¶¶¶¶¶¶¶¶¶¶   ¶    ¶¶              \n");	
-	gotoXY(65,12);printf("  ¶¶¶¶¶¶¶¶¶¶¶     ¶¶     ¶¶    ¶¶¶¶¶¶   \n");	
-	gotoXY(65,13);printf("¶¶¶¶¶¶¶          ¶¶       ¶¶ ¶¶¶¶¶¶¶¶¶¶ \n");TextColor(92);	
-	gotoXY(65,14);printf("         ¶¶¶¶¶  ¶¶¶        ¶  ¶¶¶¶¶¶¶¶¶ \n");	
-	gotoXY(65,15);printf("      ¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n");	
-	gotoXY(65,16);printf("     ¶¶¶¶¶¶¶¶¶¶¶¶  ¶¶¶¶¶  ¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n");	
-	gotoXY(65,17);printf("    ¶¶¶  ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶  ¶¶¶¶¶¶¶¶¶  ¶¶\n");	
-	gotoXY(65,18);printf("    ¶¶   ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶¶  ¶¶\n");	
-	gotoXY(65,19);printf("    ¶¶  ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶¶ ¶¶ \n");	
-	gotoXY(65,20);printf("    ¶¶¶ ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶¶¶¶  \n");	
-	gotoXY(65,21);printf("    ¶¶¶  ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶¶¶¶¶   \n");	
-	gotoXY(65,22);printf("     ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶  ¶¶¶¶¶¶¶¶¶     \n");	
-	gotoXY(65,23);printf("     ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶                \n");	
-	gotoXY(65,24);printf("       ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶                  \n");	
-	gotoXY(65,25);printf("          ¶¶¶¶¶¶¶¶¶¶                    \n");	
-	gotoXY(96,12);printf("¶¶¶¶¶¶");
-	gotoXY(94,13);printf("¶¶¶¶¶¶¶¶¶¶");	TextColor(82);	
-	gotoXY(89,5);printf("¶¶");
-	gotoXY(88,6);printf("¶¶¶");
-	gotoXY(87,7);printf("¶¶¶¶");
-	gotoXY(86,8);printf("¶¶ ¶¶");	
-	gotoXY(86,9);printf("¶  ¶¶");
-	gotoXY(85,10);printf("¶   ¶¶");
-	gotoXY(84,11);printf("¶    ¶¶");	
-	gotoXY(83,12);printf("¶¶     ¶¶");
-	gotoXY(83,12);printf("¶¶     ¶¶");
-	gotoXY(82,13);printf("¶¶¶        ¶");	
-	gotoXY(89,4);printf("¶¶");
-	gotoXY(89,3);printf("¶¶");
-	gotoXY(88,2);printf("¶¶");
-	gotoXY(87,1);printf("¶¶");
-	gotoXY(87,0);printf("¶");		
-	char s[] = {"        CHUONG TRINH QUAN LY SINH VIEN     "};	
-	int m = strlen(s) - 1;	TextColor(172);	
-	while( !kbhit() ){      
-		for(int i = m; i > 0 ; i-- ){         
-			s[i] = s[i-1] ;      	 
-			s[0] = s[m-1];	  
-		}	   	   
-		gotoXY(38,2);       printf("%s",s);       
-		gotoXY(38,2);printf(" ");	   Sleep(100); 	 
-	} 	 
-	TextColor(91);
-}
+
 void Khung_Xuat_Diem_TB(){
 	gotoXY(0,0);TextColor(90);printf("\n\n\n\n\n   +-----------------------------------------------------------------------+");	
 	printf("\n   |     |		 |		      |          |	    |      |");	

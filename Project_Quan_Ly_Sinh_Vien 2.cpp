@@ -217,7 +217,7 @@ void DocFileLop(ListLop &ds)
 {
 	for(int i = 0; i < maxlop; i++)	//Khoi tao Mang rong~
 	{
-	//	ds.l[i].MALOP[0] = NULL;	ds.l[i].TENLOP[0] = NULL;	ds.l[i].NienKhoa[0] = NULL;		ds.l[i].Head = NULL;
+		ds.l[i].MALOP[0] = NULL;	ds.l[i].TENLOP[0] = NULL;	ds.l[i].NienKhoa[0] = NULL;		ds.l[i].Head = NULL;
 	}
 	fstream f; string data;
 	f.open("DSLOP.txt", ios::in);
@@ -4895,7 +4895,7 @@ SetConsoleTextAttribute(hConsoleOutput, wAttributes);
 
 int main()
 {
-	SetBGColor(5);
+	SetBGColor(12);
 	ListLop dsLOP;	dsLOP.n = 0;
 	ListMonHoc *root = NULL;
 	//Nap du~ lieu
