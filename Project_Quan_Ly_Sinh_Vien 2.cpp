@@ -81,6 +81,25 @@ struct ListMonHoc
 	MonHoc mh;
 	ListMonHoc *left, *right;
 };
+
+void SetBGColor(WORD color)
+{
+HANDLE hConsoleOutput;
+hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+
+CONSOLE_SCREEN_BUFFER_INFO screen_buffer_info;
+GetConsoleScreenBufferInfo(hConsoleOutput, &screen_buffer_info);
+
+WORD wAttributes = screen_buffer_info.wAttributes;
+color &= 0x000f;
+color <<= 4;
+wAttributes &= 0xff0f;
+wAttributes |= color;
+
+SetConsoleTextAttribute(hConsoleOutput, wAttributes);
+}
+
+
 //Bat phï¿½m
 int GetKey()
 {	
@@ -109,6 +128,7 @@ char MENUmonhoc[2][30] = {"  1.Nhap Mon Hoc        ","  2.Xem Mon Hoc         "}
 char MENUdiem[4][30] = {"  1.Nhap Diem Sinh Vien ","  2.Xem Diem Sinh Vien  ","  3.Xem Diem Trung Binh ","  4.Xem Diem Tong Ket   "};
 void ToMauMenuChinh(int color,int vitri)
 {
+	SetBGColor(12);
 	TextColor(color);
 	gotoxy(0,5+vitri*4); cout<<"                        ";
 	gotoxy(0,6+vitri*4); cout<<MENU[vitri];
@@ -116,6 +136,7 @@ void ToMauMenuChinh(int color,int vitri)
 }
 void ToMauMenuCon(int color,char MENUCON[][30],int vitri )
 {
+		SetBGColor(12);
 	TextColor(color);
 	gotoxy(28, 5 + (vitri + 1 ) *4);	cout<<"                        ";
 	gotoxy(28, 6 + (vitri + 1 ) *4);	cout<<MENUCON[vitri] ;
@@ -170,6 +191,7 @@ int MenuCon(int item, char MENUCON[][30])
 }
 int MenuCha()
 {
+		SetBGColor(12);
 	int vitri = 0;
 	while ( 1 )
 	{
@@ -4622,7 +4644,7 @@ void Xuat_Diem_TongKet(ListLop ds, ListMonHoc *root)
 			TextColor(94);gotoXY(18,24); printf("           NHAN F5 DE BAT CHUC NANG DI CHUYEN        "); TextColor(12);
 			gotoXY(40,y);cout<<ds.l[ds.n].MALOP;
 		}
-		if(key == ESC)	{TextColor(91);	return;	}
+		if(key == ESC)	{TextColor(91); 	return;	} 
 	}
 		soluongsv = DemSinhVien(ds.l[vitriMang].Head);
 		SapXepSV(ds.l[vitriMang].Head); 	//Sap Xep danh sach theo Ten Ho
@@ -4771,9 +4793,11 @@ void GiaiPhong(ListLop &dsLOP, ListMonHoc *&root)
 }
 void MenuOngNoi(ListLop &dsLOP, ListMonHoc *&root)
 {
+
 	int chonMenuCon;
 	while ( 1 )
 	{
+		TextColor(203); //mauBG
 		system("cls");
 		for(int i = 0; i < 5; i++)
 		{
@@ -4786,8 +4810,10 @@ void MenuOngNoi(ListLop &dsLOP, ListMonHoc *&root)
 		int chon = MenuCha();
 		switch(chon)
 		{
+	
 		case 1:
 			{
+			
 				for(int i = 0; i < 3; i++)
 				{
 					if(i == 0)	{TextColor(236);}		else{TextColor(252);}
@@ -4807,6 +4833,7 @@ void MenuOngNoi(ListLop &dsLOP, ListMonHoc *&root)
 			}
 		case 2:
 			{
+				
 				for(int i = 0; i < 3; i++)
 				{
 					if(i == 0)	{TextColor(236);}		else{TextColor(252);}
@@ -4826,6 +4853,7 @@ void MenuOngNoi(ListLop &dsLOP, ListMonHoc *&root)
 			}
 		case 3:
 			{
+					SetBGColor(12);
 				for(int i = 0; i < 2; i++)
 				{
 					if(i == 0)	{TextColor(236);}		else{TextColor(252);}
@@ -4844,6 +4872,7 @@ void MenuOngNoi(ListLop &dsLOP, ListMonHoc *&root)
 			}
 		case 4:
 			{
+					SetBGColor(12);
 				for(int i = 0; i < 4; i++)
 				{
 					if(i == 0)	{TextColor(236);}		else{TextColor(252);}
@@ -4852,10 +4881,11 @@ void MenuOngNoi(ListLop &dsLOP, ListMonHoc *&root)
 					gotoxy(28, 7 + (i + 1 ) *4);	cout<<"                        ";
 				}
 				chonMenuCon = MenuCon(4,MENUdiem);
-				TextColor(91);
+				TextColor(55);
 				system("cls");
 				switch ( chonMenuCon )
 				{
+				
 					case 1:		{	Nhap_Xuat_Diem(dsLOP,root,1);break;		}
 					case 2:		{	Nhap_Xuat_Diem(dsLOP,root,0);break;		}
 					case 3:		{	Xuat_Diem_TrungBinh(dsLOP,root);break;	}
@@ -4866,30 +4896,14 @@ void MenuOngNoi(ListLop &dsLOP, ListMonHoc *&root)
 			{
 				putchar(7);
 				int temp = ThongBao_Thoat();
-				if(temp == 1){	GiaiPhong(dsLOP,root); TextColor(91); system("cls");exit(0); }
-				TextColor(91);	break;
+				if(temp == 1){	GiaiPhong(dsLOP,root); TextColor(55); system("cls");exit(0); }
+				TextColor(55);	break;
 			}
 		}
 	}
 }
 
 
-void SetBGColor(WORD color)
-{
-HANDLE hConsoleOutput;
-hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
-
-CONSOLE_SCREEN_BUFFER_INFO screen_buffer_info;
-GetConsoleScreenBufferInfo(hConsoleOutput, &screen_buffer_info);
-
-WORD wAttributes = screen_buffer_info.wAttributes;
-color &= 0x000f;
-color <<= 4;
-wAttributes &= 0xff0f;
-wAttributes |= color;
-
-SetConsoleTextAttribute(hConsoleOutput, wAttributes);
-}
 
 
 
@@ -4905,4 +4919,9 @@ int main()
 	DocFileDiem(dsLOP,root);
 	//Menu
 	MenuOngNoi(dsLOP,root);	
+	// check bang mau
+//  for (int color = 0; color <= 255; color++) {
+//        TextColor(color);
+//        std::cout << "Màu này có mã: " << color << std::endl;
+//    }
 }

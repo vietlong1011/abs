@@ -48,15 +48,15 @@ void ThongTinChung(){
 	string dino[11] =
             {
                     "                                                       ",
-                    "           e-e                     (\____/)            ",
+                    "           e-e                     (\____/)             ",
                     "         /(\\_/)                   / @__@ \\    ABS      ",
                     ".___.---' /`-'                    (   (oo) ) //        ",
                     " `-._.  )/,,  /OOP C++/          / `~~~~~~~'//         ",
                     "     //                         //| ___.--|'/          ",
                     "    ^^                         // | Nong  |            ",
                     "==================             m  |uuuuuuu|            ",
-                    "                                  //     \\            ",
-                    "                                 //       \\           ",     
+                    "                                  //     \\             ",
+                    "                                 //       \\            ",     
                     "                                ===        ===         ",       
             };
   
@@ -64,7 +64,7 @@ void ThongTinChung(){
 
 for (int i = 0; i < 11; i++) {
     gotoXY(65, 5 + i); 
-    TextColor(92);
+    TextColor(55);
     cout << dino[i] << endl;
 }
     
@@ -120,7 +120,7 @@ for (int i = 0; i < 11; i++) {
 		gotoXY(38,2);       printf("%s",s);       
 		gotoXY(38,2);printf(" ");	   Sleep(100); 	 
 	} 	 
-	TextColor(91);
+	TextColor(55);
 }
 void Khung_Nhap_Lop(){
 	gotoXY(0,0);
