@@ -246,7 +246,8 @@ void DocFileLop(ListLop &ds)
 	if(f == NULL){return;} //Khong tim thay file => out
 	while(!f.eof())
 	{
-		getline(f,data);	if(data.size() == 0){break;} // Khi da co file va du lieu rong~ => out
+		getline(f,data);
+		if(data.size() == 0){break;} // Khi da co file va du lieu rong~ => out
 		strcpy(ds.l[ds.n].MALOP,data.c_str());
 		getline(f,data);		strcpy(ds.l[ds.n].TENLOP,data.c_str());
 		getline(f,data);		strcpy(ds.l[ds.n].NienKhoa,data.c_str());
@@ -516,7 +517,7 @@ void DocFileSV(ListLop &ds)
 	string data;
 	fstream f;
 	f.open("DSSINHVIEN.txt",ios::in);
-	if(f == NULL)	{return;}
+	if(f == NULL)	{return;} 
 	while(!f.eof())
 	{
 		SinhVien sv;
@@ -4903,12 +4904,129 @@ void MenuOngNoi(ListLop &dsLOP, ListMonHoc *&root)
 	}
 }
 
+//task login
+void login();
+void registration();
+void forgot();
 
+void SetColor(int backgound_color, int text_color)
+{
+    HANDLE hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
 
+    int color_code = backgound_color * 16 + text_color;
+    SetConsoleTextAttribute(hStdout, color_code);
+}
 
-
+//main
 int main()
 {
+ SetColor(0, 14) ;
+	int c;
+
+	cout<<"\t\t\t______________________________________________________________\n\n\n";
+	cout<<"\t\t\t                  Welcome to the Login page                    \n\n\n";
+    cout <<"\t\t       *                *        \n";
+    cout <<"\t\t\t\t\t\t\t                      *         \n";
+      cout<<"\n";
+    cout <<"\t\t\t\t\t                   *  \n";
+    cout<<"\n";
+	cout << "          *            *        \n";
+    cout <<"\t\t\t\t\    *                 *       \n";
+    cout <<"\t\t\t                             \n";
+    cout <<"\t\t        \n";
+	cout << "\t\t\t\t         /\\          \n";
+    cout << "\t\t\t\t        /==\\       \n";
+    cout << "\t\t\t\t       /    \\        \n";
+    cout << "\t\t\t\t      /   L  \\      \n";
+    cout << "\t\t\t\t     /        \\     \n";
+    cout << "\t\t\t\t    /__________\\    \n";
+    cout << "\t\t\t\t    |    ____   |    \n";
+    cout << "\t\t\t\t    |   |    |  |    \n";
+    cout << "\t\t\t\t    |   |BIG |  |    \n";
+    cout << "\t\t\t\t    |   |____|  |    \n";
+    cout << "\t\t\t\t    |           |    \n";
+    cout << "\t\t\t\t    |   ______  |    \n";
+    cout << "\t\t\t\t    |  |     |  |    \n";
+    cout << "\t\t\t\t   /|__|_____|__|\\    \n";
+    cout <<"\t\t\t\t  /// +  |||   +\\\\\\       \n";
+    cout <<"\t\t\t\t ///  +  |||  +  \\\\\\       \n";
+    cout <<"\t\t\t\t      +    +   +    +       \n";
+    cout <<"\t\t\t\t +    +   +    +   +    +       \n";
+    cout <<"\t\t\t\t   +     +  +     +      \n";
+    cout <<"\t\t\t\      +    +     +    +       \n";
+
+
+	cout<<"\t\t\t__________________          MENU          ______________________\n\n\n";
+	cout<<"                                                                       \n\n\n";
+	cout<<"\t| Press 1 to LOGIN                       |"<<endl;
+	cout<<"\t| Press 2 to REGISTER                    |"<<endl;
+	cout<<"\t| Press 3 if you forgot your PASSWORD    |"<<endl;
+	cout<<"\t| Press 4 to EXIT                        |"<<endl;
+	cout<<"\n\t\t\t Please enter your choice : ";
+	cin>>c;
+	cout<<endl;
+	
+	switch(c)
+	{
+		case 1:
+			login();
+			break;
+			
+		case 2:
+			registration();
+			break;
+			
+		case 3:
+			forgot();
+			break;
+			
+		case 4:
+			cout<<"\t\t\t  Thankyou!!  \n\n";
+			break;
+		default:
+			system("cls");
+			cout<<"\t\t\t  Please select from the options given above  \n"<<endl;
+			main();
+	
+	}
+		
+}
+
+//function login
+
+
+void login()
+{
+	int count;
+	string userId, password, id, pass;
+	system("cls");
+	cout<<"\t\t\t  Please enter the username and password : "<<endl;
+	cout<<"\t\t\t  USERNAME  ";
+	cin>>userId;
+	cout<<"\t\t\t  PASSWORD  ";
+	cin>>password;
+	
+	ifstream input("records.txt");
+	
+	while(input>>id>>pass)
+	{
+		if(id==userId && pass==password)
+		{
+			count=1;
+			system("cls");
+		}
+	}
+	input.close();
+	
+	if(count==1)
+	{
+		cout<<"";
+		cout<<"\n\t Your LOGIN is successful  \n  Thanks for logging in !  \n";
+		cout<<"\n\t Xin Chao " +userId << endl;
+		cout<<"";
+		system("pause");
+		system("cls");
+	
 	SetBGColor(12);
 	ListLop dsLOP;	dsLOP.n = 0;
 	ListMonHoc *root = NULL;
@@ -4919,9 +5037,100 @@ int main()
 	DocFileDiem(dsLOP,root);
 	//Menu
 	MenuOngNoi(dsLOP,root);	
-	// check bang mau
-//  for (int color = 0; color <= 255; color++) {
-//        TextColor(color);
-//        std::cout << "Màu này có mã: " << color << std::endl;
-//    }
+
+	}
+	else{
+		cout<<"\n LOGIN ERROR \n Please check your username and password \n";
+		main();
+	}
+		
 }
+
+void registration()
+{
+	string ruserId, rpassword, rid, rpass;
+	system("cls");
+	cout<<"\t\t\t  Enter the userename : ";
+	cin>>ruserId;
+	cout<<"\t\t\t Enter the password :  ";
+	cin>>rpassword;
+	
+	ofstream f1("records.txt", ios::app);
+	f1<<ruserId<<' '<<rpassword<<endl;
+	system("cls");
+	cout<<"\n\t\t\t Registration is successfull!  \n";
+	main();
+	
+	
+}
+void forgot()
+{
+	int option;
+	system("cls");
+	cout<<"\t\t\t  You forgot the password? No worries \n";
+	cout<<"Press 1 to search your id by username "<<endl;
+	cout<<"Press 2 to go back to the main menu "<<endl;
+	cout<<"\t\t\t  Enter your choice :";
+	cin>>option;
+	switch(option)
+	{
+		case 1:
+		{
+			int count=0;
+			string suserId, sId, spass;
+			cout<<"\n\t\t\t Enter the username which you remembered : ";
+			cin>>suserId;
+		
+			ifstream f2("records.txt");
+			while(f2>>sId>>spass)
+			{
+				if(sId==suserId)
+			{
+				count=1;
+				}
+			}
+			f2.close();
+			if(count==1)
+			{
+				cout<<"\n\n  Your account is found!  \n";
+				cout<<"\n\n  Your password is : "<<spass;
+				main();	
+			}
+			else{
+				cout<<"\n\t  Sorry! your account is not found!  \n";
+				main();
+				
+			}
+			break;
+		}
+		  case 2:
+		  	{
+		  		main();
+		  		}
+		  	default:
+		  		cout<<"\t\t\t  Wrong choice ! Please try again "<<endl;
+		  		forgot();
+	}
+	
+}
+
+// comment old code no login (callback)
+
+//int main()
+//{
+//	SetBGColor(12);
+//	ListLop dsLOP;	dsLOP.n = 0;
+//	ListMonHoc *root = NULL;
+//	//Nap du~ lieu
+//	DocFileLop(dsLOP);	
+//	DocFileSV(dsLOP); 
+//	DocFileMH(root);
+//	DocFileDiem(dsLOP,root);
+//	//Menu
+//	MenuOngNoi(dsLOP,root);	
+//	// check bang mau
+////  for (int color = 0; color <= 255; color++) {
+////        TextColor(color);
+////        std::cout << "Màu này có mã: " << color << std::endl;
+////    }
+
